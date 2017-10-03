@@ -1,0 +1,25 @@
+{
+  "name": "interview-codingchallenge-fsjs",
+  "version": "1.0.0",
+  "description": "MEAN challenge interview",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosOnFire/interview-codingchallenge-fsjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosOnFire/interview-codingchallenge-fsjs/issues"
+  },
+  "homepage": "https://github.com/CarlosOnFire/interview-codingchallenge-fsjs#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
