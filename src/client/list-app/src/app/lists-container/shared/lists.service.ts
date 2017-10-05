@@ -1,59 +1,54 @@
 import { Injectable } from '@angular/core'
-import { List, ListItem } from './lists.model'
+import { List } from './lists.model'
 
 @Injectable()
 export class ListsService {
 
   constructor(){}
 
+  //Pending implementing httpRequest services for db communication
   getAllList(){
     return LISTS
   }
+
+  addNewList(list){
+    LISTS.push(list)
+  }
+
+  editListName(listName, listNewName){
+    LISTS.forEach(list => {
+      if(list.name_list === listName)
+        list.name_list = listNewName
+    })
+  }
+
+  deleteList(listName){
+    // let index = LISTS.indexOf(listName)
+    // console.log(index)
+  }
+
+  addNewItem(listName,listItem){
+    LISTS.forEach(list => {
+      if(list.name_list === listName)
+        list.items.push(listItem)
+    })
+  }
+
+  editItemName(itemName){
+    // LISTS.forEach(item => {
+
+    // })
+  }
+
 }
 
-const LISTS:List[] = [
+const LISTS: List[] = [
   {
-    id_list: 1,
     name_list: "Books",
-    items: [
-      {
-        id_item: 1,
-        name_item: "Harry Potter"
-      },
-      {
-        id_item: 2,
-        name_item: "Harry Potter 2"
-      },
-      {
-        id_item: 3,
-        name_item: "Harry Potter 5555"
-      },
-      {
-        id_item: 4,
-        name_item: "Harry Potter Teah"
-      }
-    ]
+    items: ['Harry Potter', 'Harry Potter 2', 'Lord of the Rings', 'The Hobbit']
   },
   {
-    id_list: 2,
-    name_list: "Movies",
-    items: [
-      {
-        id_item: 1,
-        name_item: "Rocky"
-      },
-      {
-        id_item: 2,
-        name_item: "Rocky 2"
-      },
-      {
-        id_item: 3,
-        name_item: "Rocky 3"
-      },
-      {
-        id_item: 4,
-        name_item: "Rocky Teah"
-      }
-    ]
+    name_list: "Pizza",
+    items: ['Pepperoni', 'Macarronni', 'Veggie', 'Double Cheese']
   }
 ]

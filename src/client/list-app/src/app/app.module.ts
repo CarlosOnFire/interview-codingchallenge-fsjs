@@ -15,7 +15,7 @@ import { ListsService } from './lists-container/shared/lists.service'
     AppComponent,
     NavbarComponent,
     ListContainerComponent,
-    ListItemComponent
+    ListItemComponent,
   ],
   imports: [
     BrowserModule,

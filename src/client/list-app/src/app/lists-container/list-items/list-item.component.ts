@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { ListItem } from '../shared/lists.model'
+import { ListsService } from '../shared/lists.service'
+import { List } from '../shared/lists.model'
 
 
 @Component({
@@ -9,9 +10,15 @@ import { ListItem } from '../shared/lists.model'
 })
 
 export class ListItemComponent implements OnInit {
-  @Input() item: ListItem
+  @Input() item: List
+
+  constructor(private listServices:ListsService){}
 
   ngOnInit(){
     console.log(this.item)
+  }
+
+  editItem(item){
+    this.listServices.editItemName(item)
   }
 }
