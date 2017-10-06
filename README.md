@@ -1,3 +1,79 @@
+# Edit: Project Development
+
+## client-side (currently on frontend branch)
+
+**Environment**
+  
+  - AngularJS **[WORKING]**
+  
+**Components**
+
+  - app.component
+  - navbar.component
+  - list-container.component
+    - list-item.component
+  
+**Models**
+  
+```
+  List interface: {
+    id_list: number,
+    name_list: string,
+    items: ListItem[]
+  }
+  
+  ListItem interface: {
+    id_item: number,
+    name_item: string,
+  }
+```
+
+**Services**
+
+- ListServices
+
+**//TODO**
+
+* Update models and components for new backend sctructure
+* Complete services with UI interaction (add, update and delete list and items)
+* HttpRequest service
+
+## server-side (currently in backend branch)
+
+**Enviroments**
+
+- node.js **[WORKING]**
+- express **[WORKING]**
+- mongoDb **[WORKING]**
+- mongoose **[WORKING]**
+
+**Schemas**
+
+```
+- ListSchema {
+  - name: String,
+  - items: [String]
+  }
+```  
+
+**CRUD RestfulAPI Endpoints Routes**
+
+```
+  - route('/lists')
+    - GET list_all_lists 
+    - POST create_a_list
+
+
+  - route('/lists/:listId')
+    - GET read_a_list
+    - PUT update_a_list
+    - DELETE delete_a_list
+```
+
+**//TODO**
+
+* Insert real data in database
+
 # Let's code some JS!
 
 Hey, welcome to the first coding challenge of your interview process, you'll be presented with a set of steps to accomplish in order to get yourself graded on 
@@ -35,11 +111,12 @@ You will be creating a simple server-client application so common nowadays, usin
     - I need a way to add, edit, and delete items on such lists
     - I need a way to view the lists I create
   - As a developer,
-    - I need the node_modules to be ignored by git 
-    - I need to be able to access the CRUD capabilities of the lists through a RESTful API, json based, from external domains
-    - I need schemas ( mongoose preferred ) for the Lists and Items entities
-    - I need an exposed CRUD API to affect the Lists and Items entities using the correct HTTP verbs for each
-      - Create, update, remove, fetch all and fetch by id should be supported for lists and items (10 endpoints total)
+    - I need the node_modules to be ignored by git **[DONE]**
+    - I need to be able to access the CRUD capabilities of the lists through a RESTful API, json based, from external domains **[DONE]**
+    - I need schemas ( mongoose preferred ) for the Lists and Items entities **[DONE]**
+    - I need an exposed CRUD API to affect the Lists and Items entities using the correct HTTP verbs for each 
+      - Create, update, remove, fetch all and fetch by id should be supported for lists and items (10 endpoints total) 
+      **[DONE 5 ENDPOINTS FOR LISTS AND TESTED ON POSTMAN]**
     - I need middleware to happen on each request validating that the user has a cookie named "auth" or not (log the value to output, we are not managing authentication of any kind just yet)
     
     - I need a test suit testing the endpoints 
