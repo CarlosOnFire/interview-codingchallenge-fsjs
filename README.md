@@ -34,9 +34,9 @@
 
 **//TODO**
 
-* Update models and components for new backend sctructure
-* Complete services with UI interaction (add, update and delete list and items)
-* HttpRequest service
+* Update models and components for new backend sctructure **[DONE]**
+* Complete services with UI interaction (add, update and delete list and items) **[DONE]**
+* HttpRequest service **[PENDING]**
 
 ## server-side (currently in backend branch)
 
@@ -72,7 +72,7 @@
 
 **//TODO**
 
-* Insert real data in database
+* Insert real data in database **[DONE]**
 
 # Let's code some JS!
 
