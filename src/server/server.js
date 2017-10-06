@@ -2,7 +2,7 @@ var express = require('express'),
 app = express(),
 port = process.env.PORT || 3000,
 mongoose = require('mongoose'),
-List = require('./src/server/api/models/todoListModel'), //created model loading here
+List = require('./api/models/todoListModel'), //created model loading here
 bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
@@ -13,8 +13,14 @@ mongoose.connect('mongodb://localhost/Tododb');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var path = require("path");
 
-var routes = require('./src/server/api/routes/todoListRoutes'); //importing route
+app.get('/',function(req,res){
+    res.sendFile(__dirname+'/dist/index.html');
+    //__dirname : It will resolve to your project folder.
+  });
+
+var routes = require('./api/routes/todoListRoutes'); //importing route
 routes(app); //register the route
 
 
